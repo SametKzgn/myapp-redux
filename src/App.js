@@ -4,8 +4,13 @@ import Nav from './components/nav/Nav.jsx';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-[#e5e7eb] w-full h-full">
+   <div>
      <Nav/>
+    </div> 
+
+    
+    
 
     </div>
   );
