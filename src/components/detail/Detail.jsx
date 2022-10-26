@@ -1,9 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { MdLightMode, MdOutlineNightlight } from "react-icons/md";
-import Filter from "../filter/Filter";
-import Items from "../items/Items";
-import Search from "../search/Search";
+
 function Nav() {
   const [theme, setTheme] = useState("light");
 
@@ -31,9 +29,27 @@ function Nav() {
         </button>
       </div>
       <hr className="border-[1px] border-gray-300 dark:border-gray-800 " />
-      <Search/>
-      <Filter/>
-      <Items/>
+
+      <div className="flex items-center justify-center mt-[5rem]">
+        <div className=" bg-white rounded-2xl  w-[34rem] sm:w-[55rem] h-[100%]  ">
+          <div className="flex flex-row">
+
+          <div className="flex flex-col items-center justify-center">
+            <img
+              className="w-[7rem] h-[5rem] "
+              src="https://cdn.pixabay.com/photo/2016/10/27/12/55/turkish-flag-1774834_960_720.png"
+              />
+            <p>turkey</p>
+          </div>
+          <div className="flex flex-col border-slate-500">
+            <input className="border-slate-500" type="text" name="" id="" />
+            
+            </div>
+
+              </div>
+
+        </div>
+      </div>
     </div>
   );
 }

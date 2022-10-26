@@ -1,17 +1,20 @@
 /* import '../scss/styles.js'; // scss yazacagın tum sayafalrda kullan */
-import './App.css';
-import Nav from './components/nav/Nav.jsx';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Detail from "./components/detail/Detail";
+import Nav from "./components/nav/Nav.jsx";
+
+
 
 function App() {
   return (
     <div className="App bg-[#e5e7eb] w-full h-full">
-   <div>
-     <Nav/>
-    </div> 
-
-    
-    
-
+      <div className="flex flex-col">
+      <Routes>
+        <Route  path="/" element={ <Nav/>}/>
+        <Route path ="detail" element={ <Detail/> }/>
+        </Routes>
+      </div>
     </div>
   );
 }
