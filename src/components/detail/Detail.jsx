@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { MdLightMode, MdOutlineNightlight } from "react-icons/md";
+import "../../App.css";
 
 function Nav() {
   const [theme, setTheme] = useState("light");
@@ -32,22 +33,55 @@ function Nav() {
 
       <div className="flex items-center justify-center mt-[5rem]">
         <div className=" bg-white rounded-2xl  w-[34rem] sm:w-[55rem] h-[100%]  ">
-          <div className="flex flex-row">
-
-          <div className="flex flex-col items-center justify-center">
-            <img
-              className="w-[7rem] h-[5rem] "
-              src="https://cdn.pixabay.com/photo/2016/10/27/12/55/turkish-flag-1774834_960_720.png"
+          <div className="flex flex-row py-5 px-[2rem] gap-5">
+            <div className="flex  flex-col items-center gap-3  justify-center">
+              <img
+                className="w-[100%] rounded-xl "
+                src="https://cdn.pixabay.com/photo/2016/10/27/12/55/turkish-flag-1774834_960_720.png"
               />
-            <p>turkey</p>
-          </div>
-          <div className="flex flex-col border-slate-500">
-            <input className="border-slate-500" type="text" name="" id="" />
-            
+              <p>Turkey</p>
             </div>
+            <div className="grid grid-rows-5 grid-flow-col gap-4  border-slate-500">
+              <p className=" border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+              <p className="border-slate-200 w-[13rem] h-[4rem] rounded-xl  border">
+                dfsdfsdfsdfg
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr className="border-[1px] mt-10 border-gray-300 dark:border-gray-800 " />
 
-              </div>
-
+      <div className=" flex flex-col items-center justify-center mt-[5rem]">
+        <p className="text-start"> Most Popular Cities in Turkey</p>
+        <div className="  bg-white rounded-2xl   w-[34rem] sm:w-[55rem] h-[100%]   ">
+          sdfds
         </div>
       </div>
     </div>

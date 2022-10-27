@@ -5,7 +5,7 @@ import Filter from "../filter/Filter";
 import Items from "../items/Items";
 import Search from "../search/Search";
 function Nav() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("light"); //reducer a at
 
   useEffect(() => {
     if (theme === "dark") {
@@ -16,7 +16,7 @@ function Nav() {
   }, [theme]);
 
   const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(theme === "dark" ? "light" : "dark"); //actıon yap
   };
 
   return (

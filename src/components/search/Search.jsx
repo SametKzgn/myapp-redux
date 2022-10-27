@@ -1,5 +1,5 @@
 import React from "react";
-import {AiOutlineSearch }from "react-icons/ai"
+import { AiOutlineSearch } from "react-icons/ai";
 function Search() {
   return (
     <div className="flex flex-col justify-center items-center mt-10">
@@ -13,8 +13,8 @@ function Search() {
         </label>
         <div class="relative w-full">
           <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <button className="pt-[2.5rem] text-2xl text-gray-400">
-             <AiOutlineSearch/>
+            <button className="pt-[2.5rem]  text-2xl text-gray-400">
+              <AiOutlineSearch />
             </button>
           </div>
           <input
@@ -26,7 +26,6 @@ function Search() {
           />
         </div>
       </form>
-      
     </div>
   );
 }
