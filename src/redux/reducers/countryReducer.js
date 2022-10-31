@@ -3,6 +3,7 @@ import {actionTypes} from "../actions/types";
 const initialState = {
     countryTasks: [],
     countryTask: {},
+    popularTask: []
 }
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -20,8 +21,17 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 countryTasks: [],
-                countryTask: {}
+                countryTask: {},
+                popularTask: []
             }
+            case actionTypes.POPULAR_CITY:
+                return {
+                    ...state,
+                    popularTask: action.payload
+                }
+
+
+
         default:
             return state;
     }
