@@ -13,6 +13,18 @@ export const countryItem = () => (dispatch) => {
         .catch(err => console.log(err)) //hata olursa konsola yazdır
 }
 
+export const getNeighbour = name => (dispatch) => {
+    axios
+        .get(`https://restcountries.com/v3.1/${name}`)
+        .then((country ) => {
+            dispatch({
+                type: actionTypes.NEIGHBOUR_ITEM,
+                payload: country.data
+            });
+        })
+        .catch(err => console.log(err)) //hata olursa konsola yazdır
+}
+
 export const getCountry = name => dispatch => {
     axios
         .get(`https://restcountries.com/v3.1/alpha/${name}`)
@@ -38,3 +50,5 @@ export const getPopular = name => dispatch => {
          .catch(err => console.log(err)) //hata olursa konsola yazdır
  }
  //popüler şehirler için bu apiyi bizim çekiceğimiz apiye göre değiştir yeni action ve reducer olustur burda topla
+
+

@@ -3,4 +3,5 @@ export const actionTypes = {
     GET_COUNTRY: 'GET_COUNTRY',
     CLEAR: 'CLEAR',
     POPULAR_CITY: 'POPULAR_CITY',
+    NEIGHBOUR_ITEM: 'NEIGHBOUR_ITEM'
 };

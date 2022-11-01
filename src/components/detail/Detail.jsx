@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {MdLightMode, MdOutlineNightlight} from "react-icons/md";
 import {Link, useParams} from "react-router-dom";
-import {countryItem, getCountry} from "../../redux/actions/countryAction";
+import {countryItem, getCountry, getNeighbour} from "../../redux/actions/countryAction";
 import {getPopular} from "../../redux/actions/countryAction";
 import {useDispatch, useSelector} from "react-redux";
 
@@ -11,7 +11,7 @@ function Nav() {
     const {name} = useParams();
     const {countryTask} = useSelector(state => state.country);
     const {popularTask} = useSelector(state => state.country);
-    const{countryItemTask} = useSelector(state => state.country);
+    const {neighbourItemTask} = useSelector(state => state.country);
 
     useEffect(() => {
         if (theme === "dark") {
@@ -29,7 +29,7 @@ function Nav() {
         dispatch(getCountry(name))
         dispatch(getPopular(name))
         dispatch(countryItem(name))//buraya popüler şehirler için bir tane daha dispatch çağıracaksın
-
+        dispatch(getNeighbour(name))
 
         return () => { //component ekrandan kalkacağı zaman çalışacak olan alan
             dispatch({type: 'CLEAR'}) //dispatch ile state'i temizliyor
@@ -127,24 +127,19 @@ function Nav() {
                                     <p>{popularTask?.id}</p>
                                 </p>
 
-                                <p className="text-[9px] w-fit  rounded-[2px] bg-[#e5e7eb]">{popularTask?.score}</p>
+                                <p className="text-[9px] w-fit  rounded-[2px] bg-[#e5e7eb]">SCORE:{popularTask?.score}</p>
                             </div>
                         </div>
-
                     ))}
                 </div>
             </div>
-
             <hr className="border-[1px] mt-10 border-gray-300 dark:border-gray-800 "/>
 
             <div className=" flex flex-col items-center justify-center mt-[5rem]">
 
                 <p className=" font-semibold text-2xl mb-3">Neighbour Countries of {countryTask?.name?.common}</p>
-                {countryTask?.borders.map(border => (
-                    <p>{border}</p>
-                ))}
-                    <div
-                    className="grid dark:text-black grid-rows-3 grid-flow-col gap-4 py-4 px-4  bg-white rounded-2xl   w-[34rem] sm:w-[55rem] h-[100%]   ">
+                <div className="grid dark:text-black grid-rows-3 grid-flow-col gap-4 py-4 px-4  bg-white rounded-2xl   w-[34rem] sm:w-[55rem] h-[100%]   ">
+                    {neighbourItemTask?.map(borders => (
                     <div
                         className="flex items-center gap-5 border-slate-200 w-[20rem] h-[100%] rounded-xl border-2slate-200 w-[20rem] h-[100%] rounded-xl border-2">
                         <img className="rounded-full w-20  h-20"
@@ -154,7 +149,8 @@ function Nav() {
                         <div className="flex flex-col items-start">
 
 
-                            <p>{border}</p>
+
+                            <p>sdfsd</p>
                             <div className="flex flex-row gap-1">
                                 <div className="text-[9px] w-14 flex flex-row gap-1  rounded-[2px] bg-[#38bdf8]">
 
@@ -167,12 +163,13 @@ function Nav() {
                                 </div>
                                 <div className="text-[9px] w-16  flex flex-row gap-1  rounded-[2px] bg-[#828df9]">
                                     <p className="text-white text-[8px]">AREA KM</p>
-                                    <p> {countryTask?.area}</p>
+                                    <p> {neighbourItemTask?.area}</p>
                                 </div>
                             </div>
                         </div>
 
                     </div>
+                    ))}
                 </div>
 
             </div>

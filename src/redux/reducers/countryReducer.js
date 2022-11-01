@@ -3,7 +3,8 @@ import {actionTypes} from "../actions/types";
 const initialState = {
     countryTasks: [],
     countryTask: {},
-    popularTask: []
+    popularTask: [],
+    neighbourItemTask: []
 }
 export default (state = initialState, action) => {
     switch (action.type) {
@@ -17,18 +18,27 @@ export default (state = initialState, action) => {
                 ...state,
                 countryTask: action.payload
             }
+        case actionTypes.POPULAR_CITY:
+            return {
+                ...state,
+                popularTask: action.payload
+            }
+        case actionTypes.NEIGHBOUR_ITEM:
+            return {
+                ...state,
+                neighbourItemTask: action.payload
+            }
+
         case actionTypes.CLEAR: //stateleri sıfırlamak için
             return {
                 ...state,
                 countryTasks: [],
                 countryTask: {},
-                popularTask: []
+                popularTask: [],
+                neighbourItemTask: []
             }
-            case actionTypes.POPULAR_CITY:
-                return {
-                    ...state,
-                    popularTask: action.payload
-                }
+
+
 
 
 
